@@ -1,6 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
-
+const bookRoutes = require("./routes/book.routes.js");
 const connectDB = require("./db/dbConnect.js");
 
 dotenv.config({
@@ -20,7 +20,7 @@ app.use(express.json());
 //     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
 //   })
 // );
-// app.use("/api/v1", router);
+app.use("/api/books", bookRoutes);
 const port = process.env.PORT || 3000;
 
 connectDB()
